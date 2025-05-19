@@ -1,10 +1,8 @@
 import yaml
 import xml.etree.ElementTree as ET
-
 # Load YAML data
 with open('feed.yaml', 'r') as file:
     yaml_data = yaml.safe_load(file)
-
 # Create root RSS element with namespaces
 rss_element = ET.Element(
     'rss',
@@ -14,10 +12,8 @@ rss_element = ET.Element(
         'xmlns:content': 'http://purl.org/rss/1.0/modules/content/',
     }
 )
-
 # Add <channel> element
 channel = ET.SubElement(rss_element, 'channel')
-
 # Example of populating channel data from YAML
 # Assuming YAML contains keys like 'title', 'link', 'description'
 if 'title' in yaml_data:
@@ -28,7 +24,6 @@ if 'link' in yaml_data:
 
 if 'description' in yaml_data:
     ET.SubElement(channel, 'description').text = yaml_data['description']
-
 # Convert to string or write to file
 tree = ET.ElementTree(rss_element)
 tree.write('feed.xml', encoding='utf-8', xml_declaration=True)
