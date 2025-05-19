@@ -1,4 +1,4 @@
-# The Future in Tech
+# Podcast App For Learning and Testing GitHub Actions
 
 <img src="https://raybo.org/tfit-feed/images/artwork.jpg" width="250">
 
